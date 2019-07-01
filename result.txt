@@ -1,0 +1,20 @@
+kernel/swap_io.c: In function ‘do_swap_per_fd’:
+kernel/swap_io.c:115:3: error: implicit declaration of function ‘fget_light’ [-Werror=implicit-function-declaration]
+   tmp = fget_light(current->fd_for_swap, &fput_needed);
+   ^
+kernel/swap_io.c:115:7: warning: assignment makes pointer from integer without a cast
+   tmp = fget_light(current->fd_for_swap, &fput_needed);
+       ^
+kernel/swap_io.c: At top level:
+kernel/swap_io.c:125:6: error: function declaration isn’t a prototype [-Werror=strict-prototypes]
+ void swap_check(){
+      ^
+cc1: some warnings being treated as errors
+make[1]: *** [kernel/swap_io.o] Error 1
+make[1]: *** Waiting for unfinished jobs....
+scripts/Makefile.build:44: my_syscall/Makefile: No such file or directory
+make[1]: *** No rule to make target 'my_syscall/Makefile'.  Stop.
+make: *** [my_syscall] Error 2
+make: *** Waiting for unfinished jobs....
+make: *** [kernel] Error 2
+make: *** wait: No child processes.  Stop.
